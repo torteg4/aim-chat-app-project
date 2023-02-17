@@ -1,0 +1,23 @@
+
+Name: Tiffany Ortega
+
+Stack: MERN/Javascript
+
+GitHub Repo link: https://github.com/torteg4/chat-app-project.git
+
+Project name: Dojo Chat
+
+Project description: A chat app for ninjas to chat on and off the clock. 
+
+MVP (Minimum Viable Product) features: 
+    C-create chat room
+    R-view status updates and chats
+    U-update status
+    D-delete status
+
+Bonus feature(s): 
+    CSS with either Bootstrap or Material UI
+    Socket.io
+    Log and Reg
+
+
