@@ -17,7 +17,6 @@ const UserSchema = new mongoose.Schema({
         required: [true, "Username is required"],
         minLength: [6, "Username must be at least 6 characters"],
     },
-
     email: {
         type: String,
         required: [true, "Email is required"],
@@ -26,11 +25,14 @@ const UserSchema = new mongoose.Schema({
             message: "Invalid email format"
         }
     },
-
     password: {
         type: String,
         required: [true, "Password is required"],
         minLength: [8, "Password must be at least 8 characters"]
+    },
+    status: {
+        type: String,
+        required: false,
     }
 })
 

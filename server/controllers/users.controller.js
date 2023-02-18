@@ -54,6 +54,7 @@ module.exports = {
             })
             .json({ message: "Successful login", userInfo: {
                 id: user._id,
+                firstName: user.firstName,
                 username: user.username
             }});
     },
