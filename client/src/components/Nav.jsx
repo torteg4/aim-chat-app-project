@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import  { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import { useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import axios from 'axios';
 
 const Nav = (props) => {
@@ -26,11 +26,11 @@ const Nav = (props) => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+            <nav className="instant-messenger">
                 <div className="container-fluid">
                     <ul className="navbar-nav flex-row align-items-center gap-3">
                         <li className="nav-item">
-                            <h3 className="text-light navbar-brand">Dojo Chat</h3>
+                            <h2 className="nav-link">DIM</h2>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/"}>

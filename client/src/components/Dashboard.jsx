@@ -37,18 +37,27 @@ const Dashboard = props => {
 
     return (
         <>
-        <h1>Hello {user.firstName}</h1>
+        <h1 className = "header">{user.firstName} - Instant Messenger</h1>
 
-        <div className=" container border p-4 border-dark d-flex flex-column gap-2" style={{height: "500px"}}>
+        <div className="instant-messenger">
 
-            <div className="border p-3 border-dark text-start bg-light h-100" style={{minHeight: "300px"}} >
+            <div className="message-list__container" >
+                
                 {messages.map((m, i) => (
-                    <p key={i}>{m.user === user.username ? "You" : m.user}: {m.message}</p>
+                    
+                    <p className ="message-item__other" key={i}>{m.user === user.username ? "You" : m.user}: {m.message}</p>
                 ))}
             </div>
 
-            <form onSubmit={sendMessage}>
-                <input type="text" onChange={(e) => setCurrentMessage(e.target.value)} className="form-control" />
+            <form 
+                onSubmit={sendMessage}
+                className="message-form">
+                <div>
+                    <input 
+                        type="text" 
+                        onChange={(e) => setCurrentMessage(e.target.value)} className="message-form__textarea" />
+                    <button className="message-form__submit"/>
+                </div>
             </form>
 
             {/* <Link to={"/statuses"}> Show all users</Link> */}
