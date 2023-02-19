@@ -2,16 +2,19 @@ import { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
+import StatusList from './StatusList';
 
 const Dashboard = props => {
     const {user, socket} = useContext(UserContext);
     const navigate = useNavigate();
     const [messages, setMessages] = useState([]);
     const [currentMessage, setCurrentMessage] = useState([]);
+    // const [status, setStatus] = useState("");
+    // const [statusList, setStatusList] = useState([]);
 
     useEffect (() => {
         if (user.id === 0) {
-            props.setAuthorized("You have to be logged into view that page");
+            props.setAuthorized("You have to be logged in to view that page");
             navigate("/")
         }
         socket.on("message_received", (data) => {
@@ -50,9 +53,7 @@ const Dashboard = props => {
 
         </div>
 
-        <div>
-            
-        </div>
+        <a href="/statuses"> Show all users</a>
     </>
     )
 }

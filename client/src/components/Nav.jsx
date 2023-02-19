@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import  { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import { useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import axios from 'axios';
 
 const Nav = (props) => {
-    
-    const {socket} = useContext(UserContext);
+
+    const {setUser, socket} = useContext(UserContext);
     const navigate = useNavigate()
 
     const onLogout = () => {
@@ -14,6 +14,12 @@ const Nav = (props) => {
             .then(() => {
                 console.log("Logged out!")
                 socket.disconnect();
+                // window.location.reload(false);
+                setUser({
+                    id: 0,
+                    username: "",
+                    room: ""
+                })
                 navigate("/")
             })
     }
@@ -36,9 +42,13 @@ const Nav = (props) => {
                                 Dashboard
                             </NavLink>
                         </li>
-                        <li>
+                        <li className="nav-item">
                             <NavLink>
-                                <button onClick = {() => onLogout()}>Logout</button>
+                                <button 
+                                    className="btn btn-danger"
+                                    onClick = {() => onLogout()}>
+                                        Logout
+                                </button>
                             </NavLink>
                         </li>
 

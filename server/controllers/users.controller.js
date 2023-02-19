@@ -62,6 +62,18 @@ module.exports = {
     logout: (req, res) => {
         res.clearCookie('usertoken');
         res.sendStatus(200);
-    }
+    },
+
+    // STATUS CRUD
+
+    update: (req,res) => {
+
+        User.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            .then((updatedStatus) => res.json(updatedStatus))
+            .catch((err) =>
+                res.status(400).json(err)
+        );
+    },
+
 }
 
