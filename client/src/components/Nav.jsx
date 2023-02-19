@@ -26,11 +26,11 @@ const Nav = (props) => {
 
     return (
         <>
-            <nav className="instant-messenger">
-                <div className="container-fluid">
+            <nav className="customize-row">
+                <div className="flex-row align-items-center gap-3">
                     <ul className="navbar-nav flex-row align-items-center gap-3">
                         <li className="nav-item">
-                            <h2 className="nav-link">DIM</h2>
+                            <span className="nav-link">DIM</span>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/"}>
@@ -43,12 +43,10 @@ const Nav = (props) => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink>
-                                <button 
-                                    className="btn btn-danger"
-                                    onClick = {() => onLogout()}>
-                                        Logout
-                                </button>
+                            <NavLink
+                                className="nav-link"
+                                onClick = {() => onLogout()}>
+                                        <em> Sign Out </em>
                             </NavLink>
                         </li>
 

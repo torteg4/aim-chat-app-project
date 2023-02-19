@@ -37,16 +37,31 @@ const Dashboard = props => {
 
     return (
         <>
-        <h1 className = "header">{user.firstName} - Instant Messenger</h1>
+        <div className="d-flex p-2">
 
         <div className="instant-messenger">
+            
+            <p className = "header">{user.username} - Instant Messenger</p>
 
-            <div className="message-list__container" >
-                
-                {messages.map((m, i) => (
+            <div className="message-list">
+                <span className="nav__warning-level">
+                    {user.username}'s Warning Level: 0%
+                </span>
+            
+                <div className="message-list__container" >
                     
-                    <p className ="message-item__other" key={i}>{m.user === user.username ? "You" : m.user}: {m.message}</p>
-                ))}
+                    {messages.map((m, i) => (
+                        
+                        <p className ="message-item" key={i}>
+                            <span className = "message-item__username">
+                                {m.user === user.username ? "You" : m.user}:
+                            </span>
+                            <span>
+                                {m.message}
+                            </span>
+                        </p>
+                    ))}
+                </div>
             </div>
 
             <form 
@@ -56,6 +71,8 @@ const Dashboard = props => {
                     <input 
                         type="text" 
                         onChange={(e) => setCurrentMessage(e.target.value)} className="message-form__textarea" />
+                </div>
+                <div className="message-form__actions">
                     <button className="message-form__submit"/>
                 </div>
             </form>
@@ -64,6 +81,9 @@ const Dashboard = props => {
         </div>
 
         <StatusList />
+
+        </div>
+
     </>
     )
 }

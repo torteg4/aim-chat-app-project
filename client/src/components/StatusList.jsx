@@ -61,21 +61,22 @@ const StatusList = (props) => {
         .catch((err) => console.log(err))
     }
 
-
-    
     return (
     <>
-    <div className="border p-3 border-dark text-start bg-light h-100">
-        <h4>Statuses:</h4>
+    <div className="instant-messenger">
+
+        <p className="header">Friends List</p>
         
-        <form onSubmit = { onUpdateHandler }>
-            <label>Status: </label>
-            <input 
-                onChange = {(e)=> setStatus(e.target.value)}
-                type="text"
-                value={status}
-            />
-            <button>Update</button>
+        <form onSubmit = { onUpdateHandler } className="message-form">
+            <div>
+                <label>Status: </label>
+                <input 
+                    onChange = {(e)=> setStatus(e.target.value)}
+                    type="text"
+                    value={status}
+                    />
+                <button className="status-form__submit">Update</button>
+            </div>
         </form>
 
         <table>
