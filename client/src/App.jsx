@@ -19,7 +19,7 @@ function App() {
             <Routes>
                 <Route index element={<LoginPage authorized={authorized} setAuthorized={setAuthorized}/>}/>
                 <Route path="/dashboard" element={<Dashboard setAuthorized={setAuthorized}/>}/>
-                <Route path="/statuses" element={<StatusList/>}/>
+                <Route path="/statuses" element={<StatusList />}/>
             </Routes>
         </UserProvider>
       </BrowserRouter>

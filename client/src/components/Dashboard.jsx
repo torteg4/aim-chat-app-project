@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import StatusList from './StatusList';
 
@@ -51,9 +51,10 @@ const Dashboard = props => {
                 <input type="text" onChange={(e) => setCurrentMessage(e.target.value)} className="form-control" />
             </form>
 
+            {/* <Link to={"/statuses"}> Show all users</Link> */}
         </div>
 
-        <a href="/statuses"> Show all users</a>
+        <StatusList />
     </>
     )
 }

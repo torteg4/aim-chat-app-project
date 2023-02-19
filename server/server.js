@@ -44,6 +44,12 @@ io.on("connection", (socket) => {
     socket.on("private_message", (data) => {
         console.log(data);
         io.to(data.room).emit("private_message_response", data)
+
+    })
+
+    socket.on("update_status", (data) => {
+        console.log(data);
+        io.emit("status_updated", data)
     })
 }
 )
