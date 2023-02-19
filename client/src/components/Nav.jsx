@@ -1,6 +1,23 @@
 import { NavLink } from "react-router-dom";
+import  { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+import { useContext } from 'react'
+import axios from 'axios';
 
 const Nav = (props) => {
+    
+    const {socket} = useContext(UserContext);
+    const navigate = useNavigate()
+
+    const onLogout = () => {
+        axios.get("http://localhost:8000/api/logout", {withCredentials:true})
+            .then(() => {
+                console.log("Logged out!")
+                socket.disconnect();
+                navigate("/")
+            })
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -19,6 +36,13 @@ const Nav = (props) => {
                                 Dashboard
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink>
+                                <button onClick = {() => onLogout()}>Logout</button>
+                            </NavLink>
+                        </li>
+
+
                     </ul>
                 </div>
             </nav>
