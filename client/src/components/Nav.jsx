@@ -30,7 +30,7 @@ const Nav = (props) => {
                 <div className="flex-row align-items-center gap-3">
                     <ul className="navbar-nav flex-row align-items-center gap-3">
                         <li className="nav-item">
-                            <span className="nav-link">DIM</span>
+                            <span className="nav-link"> <strong>CDIM</strong></span>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/"}>
@@ -46,7 +46,7 @@ const Nav = (props) => {
                             <NavLink
                                 className="nav-link"
                                 onClick = {() => onLogout()}>
-                                        <em> Sign Out </em>
+                                        <em><strong> Log Out </strong></em>
                             </NavLink>
                         </li>
 

@@ -272,9 +272,44 @@ cursor: pointer;
 }
 
 .statuses{
-
+  /* display: flex;
+  flex-direction: column; */
+  gap: 0px;
 }
 
 .status-username{
   font-weight:bold;
+}
+
+/* LOG AND REG */
+
+.log-and-reg {
+  width: 300px;
+  height: 100%;
+  border: 1px solid gray;
+  background: #d6d6ce;
+  margin: 50px 0 20px 100px;
+  position: relative;
+  padding: 1px;
+  box-shadow: 2px 2px 2px #424242;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid #848484;
+  border-bottom: 1px solid #848484;
+}
+
+.log-and-reg__button {
+  width: 95px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ECEAD8;
+  /* BUTTON BOX BORDERS */
+  border-top: 3px solid #f4f4f4;
+  border-left: 3px solid #f4f4f4;
+  border-right: 3px solid #848484;
+  border-bottom: 3px solid #848484;
+  padding:3px;
+  margin:5px;
+  cursor: pointer;
 }

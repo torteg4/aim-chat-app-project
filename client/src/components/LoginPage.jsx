@@ -80,7 +80,7 @@ const LoginPage = props => {
 
         <div className="container d-flex justify-content-around p-3 ">
 
-            <form onSubmit={handleRegistration} className="col-md-5 p-3 text-start gap-3">
+            <form onSubmit={handleRegistration} className="log-and-reg">
                 <h2>Registration</h2>
 
                 <div className="form-group">
@@ -114,11 +114,11 @@ const LoginPage = props => {
                 </div>
 
                 <div className="form-group">
-                    <button className="btn btn-primary">Register</button>
+                    <button className="log-and-reg__button">Register</button>
                 </div>
             </form>
 
-            <form onSubmit={handleLogin} className="col-md-5 p-3 text-start gap-3">
+            <form onSubmit={handleLogin} className="log-and-reg">
                 <h2>Login</h2>
 
                 <div className="form-group">
@@ -132,7 +132,7 @@ const LoginPage = props => {
                 </div>
                 
                 <div className="form-group">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="log-and-reg__button">Login</button>
                 </div>
             </form>
         </div>
