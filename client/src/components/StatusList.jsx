@@ -63,34 +63,33 @@ const StatusList = (props) => {
 
     return (
     <>
-    <div className="instant-messenger">
+    <div className="buddy-list">
 
         <p className="header">Friends List</p>
-        
-        <form onSubmit = { onUpdateHandler } className="message-form">
-            <div>
+        <form onSubmit = { onUpdateHandler } className="status-form">
+            <div className="status-form__container">
                 <label>Status: </label>
                 <input 
                     onChange = {(e)=> setStatus(e.target.value)}
                     type="text"
                     value={status}
                     />
-                <button className="status-form__submit">Update</button>
+                <button className="status-form__submitButton">Update</button>
             </div>
         </form>
 
-        <table>
-            <tr>
-                <th>User</th>
-                <th>Status</th>
-            </tr>
+        <div className="status-list">
+
+        <div className="status-list__container">
+
             {statusList.length > 0 && statusList.map ((user, i) => 
-                <tr>
-                    <td>{user.username}</td>
-                    <td>{user.status}</td>
-                </tr>
+            <div className="statuses">
+                    <p className="status-username">{user.username}</p>
+                    <p>{user.status}</p>
+            </div>
             )}
-        </table>
+            </div>
+        </div>
     </div>
     </>
     )

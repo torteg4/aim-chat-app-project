@@ -44,7 +44,7 @@ const Dashboard = props => {
             <p className = "header">{user.username} - Instant Messenger</p>
 
             <div className="message-list">
-                <span className="nav__warning-level">
+                <span className="warning-level">
                     {user.username}'s Warning Level: 0%
                 </span>
             
@@ -68,9 +68,11 @@ const Dashboard = props => {
                 onSubmit={sendMessage}
                 className="message-form">
                 <div>
-                    <input 
+                    <textarea 
                         type="text" 
-                        onChange={(e) => setCurrentMessage(e.target.value)} className="message-form__textarea" />
+                        className="message-form__textarea" 
+                        onChange={(e) => setCurrentMessage(e.target.value)} 
+                    />
                 </div>
                 <div className="message-form__actions">
                     <button className="message-form__submit"/>
