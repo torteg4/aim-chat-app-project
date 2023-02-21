@@ -23,6 +23,8 @@ const LoginPage = props => {
     })
     const {register, login} = state;
     const navigate = useNavigate();
+    const [regErrors, setRegErrors] = useState({});
+    const [logErrors, setLogErrors] = useState({});
 
         // HANDLERS BELOW //        
 
@@ -48,7 +50,10 @@ const LoginPage = props => {
                 navigate("/dashboard")
 
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err);
+                setRegErrors(err.response.data.error.errors)
+            })
     }
 
     const handleLoginInputs = (e) => {
@@ -69,13 +74,17 @@ const LoginPage = props => {
                 })
                 navigate("/dashboard")
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                // console.log(err)
+                // console.log(err.response.data)
+                setLogErrors(err.response.data)
+                // console.log(logErrors)
+            })
     }
 
 
     return (
         <>
-        {/* <button onClick={() => navigate("/dashboard")}>Dashboard</button> */}
         <h1 className="text-danger" style={{display:"inline"}}>{props.authorized}</h1>
 
         <div className="container d-flex justify-content-around p-3 ">
@@ -83,10 +92,20 @@ const LoginPage = props => {
             <form onSubmit={handleRegistration} className="log-and-reg">
                 <h2>Registration</h2>
 
+                <div className="d-flex flex-column">
+                    {regErrors.firstName ? <span className="text-danger"> {regErrors.firstName.message} </span> : null}
+                    {regErrors.lastName ? <span className="text-danger"> {regErrors.lastName.message} </span> : null}
+                    {regErrors.username ? <span className="text-danger"> {regErrors.username.message} </span> : null}
+                    {regErrors.email ? <span className="text-danger"> {regErrors.email.message} </span> : null}
+                    {regErrors.password ? <p className="text-danger"> {regErrors.password.message} </p> : null}
+                    {/* {errors.confirmPassword ? <p className="text-danger"> {errors.confirmPassword.message} </p> : null} */}
+                </div>
+
                 <div className="form-group">
                     <label>First Name</label>
                     <input onChange={handleRegInputs} name="firstName" type="text" className="form-control" />
                 </div>
+
 
                 <div className="form-group">
                     <label>Last Name</label>
@@ -98,6 +117,7 @@ const LoginPage = props => {
                     <input onChange={handleRegInputs} name="username" type="text" className="form-control" />
                 </div>
 
+                
                 <div className="form-group">
                     <label>Email</label>
                     <input onChange={handleRegInputs} name="email" type="text" className="form-control" />
@@ -120,6 +140,10 @@ const LoginPage = props => {
 
             <form onSubmit={handleLogin} className="log-and-reg">
                 <h2>Login</h2>
+
+                <div className="d-flex flex-column">
+                    {logErrors ? <span className="text-danger"> {logErrors.message} </span> : null}
+                </div>
 
                 <div className="form-group">
                     <label>Email</label>
