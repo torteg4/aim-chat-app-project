@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
-import { useNavigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginPage = props => {
@@ -125,12 +125,12 @@ const LoginPage = props => {
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input onChange={handleRegInputs} name="password" type="text" className="form-control" />
+                    <input onChange={handleRegInputs} name="password" type="password" className="form-control" />
                 </div>
 
                 <div className="form-group">
                     <label>Confirm Password</label>
-                    <input onChange={handleRegInputs} name="confirmPassword" type="text" className="form-control" />
+                    <input onChange={handleRegInputs} name="confirmPassword" type="password" className="form-control" />
                 </div>
 
                 <div className="form-group">
@@ -152,7 +152,7 @@ const LoginPage = props => {
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input onChange={handleLoginInputs} name="password" type="text" className="form-control" />
+                    <input onChange={handleLoginInputs} name="password" type="password" className="form-control" />
                 </div>
                 
                 <div className="form-group">
