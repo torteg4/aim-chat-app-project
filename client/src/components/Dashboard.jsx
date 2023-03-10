@@ -44,10 +44,22 @@ const Dashboard = props => {
             <p className = "header">{user.username} - Instant Messenger</p>
 
             <div className="message-list">
-                <span className="warning-level">
+                {/* <span className="warning-level">
                     {user.username}'s Warning Level: 0%
-                </span>
-            
+                </span> */}
+
+                <nav className="nav">
+                    <ul className="nav__list">
+                        <li className="nav__item">File</li>
+                        <li className="nav__item">Edit</li>
+                        <li className="nav__item">Insert</li>
+                    </ul>
+                    <span className="warning-level">
+                        {user.username}'s Warning Level: 0%
+                    </span>
+                    </nav>
+
+
                 <div className="message-list__container" >
                     
                     {messages.map((m, i) => (

@@ -80,17 +80,37 @@ button:active {
   display: flex;
   list-style: none;
 }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__list {
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    display: flex;
+  }
+  
+.nav__item {
+    padding: 0 5px;
+    cursor: pointer;
+  }
 
-.warning-level {
+.nav__warning-level {
+    padding-right: 5px;
+}
+
+/* .warning-level {
   display: flex;
   justify-content: end;
   align-items: start;
   /* padding-right: 5px;
   padding-left: 270px;
   padding-top: 0px; */
-  margin:0px;
+  /* margin:0px;
   padding:0px;
-}
+} */
 
 .message-list {
 width: 100%;
