@@ -21,3 +21,17 @@ Bonus feature(s):
     Log and Reg
 
 
+
+Blurb:
+During my MERN stack, we all got on the topic of talking about AIM, and it gave me the idea to do a love letter to the AIM that raised me when I was young. It was probably one of the first computer applications I ever really used that helped start my interest in computers. 
+
+The first computer I ever used had windows 95, so that's the style that I wanted to emulate. 
+
+Here is my log and reg. We have all the fun validations and protected routes.
+
+Once you register, I created this dashboard where you can chat in real time. 
+
+My goal is ultimately to create private chat options. I'm still debugging some of that code so I'm not able to present that today, but such is the life of software development. 
+
+
+
